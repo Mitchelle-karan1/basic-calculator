@@ -82,4 +82,22 @@ function calculatePercentage() {
     }
 }
 
- 
+ // Function to handle keyboard input
+document.addEventListener('keydown', function(event) {
+    const key = event.key;
+    if (!isNaN(key) || ['+', '-', '*', '/'].includes(key)) {
+        appendToDisplay(key);
+    } else if (key === 'Enter') {
+        calculateResult();
+    } else if (key === 'Backspace') {
+        backspace();
+    } else if (key === 'Escape') {
+        clearDisplay();
+    }
+});
+
+// Function to handle backspace
+function backspace() {
+    const display = document.getElementById('display');
+    display.value = display.value.slice(0, -1);
+}
