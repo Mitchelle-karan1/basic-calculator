@@ -72,4 +72,14 @@ function calculateResult() {
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
 }
+// Function to calculate percentage
+function calculatePercentage() {
+    const display = document.getElementById('display');
+    try {
+        display.value = eval(display.value) / 100;
+    } catch (error) {
+        display.value = 'Error';
+    }
+}
+
  
